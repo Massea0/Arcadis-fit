@@ -1,160 +1,55 @@
 const winston = require('winston');
-const DailyRotateFile = require('winston-daily-rotate-file');
-const path = require('path');
+require('winston-daily-rotate-file');
 
-// Define log levels
-const levels = {
-  error: 0,
-  warn: 1,
-  info: 2,
-  http: 3,
-  debug: 4,
-};
+// Configuration des transports
+const transports = [];
 
-// Define colors for each level
-const colors = {
-  error: 'red',
-  warn: 'yellow',
-  info: 'green',
-  http: 'magenta',
-  debug: 'white',
-};
+// Console transport pour le développement
+if (process.env.NODE_ENV !== 'production') {
+  transports.push(
+    new winston.transports.Console({
+      format: winston.format.combine(
+        winston.format.colorize(),
+        winston.format.timestamp(),
+        winston.format.printf(({ timestamp, level, message, ...meta }) => {
+          let metaString = Object.keys(meta).length ? JSON.stringify(meta, null, 2) : '';
+          return `${timestamp} [${level}]: ${message} ${metaString}`;
+        })
+      )
+    })
+  );
+}
 
-// Tell winston that you want to link the colors
-winston.addColors(colors);
+// File transport pour la production
+if (process.env.NODE_ENV === 'production') {
+  transports.push(
+    new winston.transports.DailyRotateFile({
+      filename: 'logs/application-%DATE%.log',
+      datePattern: 'YYYY-MM-DD',
+      maxSize: '20m',
+      maxFiles: '14d',
+      format: winston.format.combine(
+        winston.format.timestamp(),
+        winston.format.errors({ stack: true }),
+        winston.format.json()
+      )
+    })
+  );
+}
 
-// Define which level to log based on environment
-const level = () => {
-  const env = process.env.NODE_ENV || 'development';
-  const isDevelopment = env === 'development';
-  return isDevelopment ? 'debug' : 'warn';
-};
-
-// Define format for logs
-const format = winston.format.combine(
-  winston.format.timestamp({ format: 'YYYY-MM-DD HH:mm:ss:ms' }),
-  winston.format.colorize({ all: true }),
-  winston.format.printf(
-    (info) => `${info.timestamp} ${info.level}: ${info.message}`,
-  ),
-);
-
-// Define transports
-const transports = [
-  // Console transport
-  new winston.transports.Console({
-    format: winston.format.combine(
-      winston.format.colorize(),
-      winston.format.simple()
-    )
-  }),
-  
-  // File transport for errors
-  new DailyRotateFile({
-    filename: path.join(__dirname, '../../logs/error-%DATE%.log'),
-    datePattern: 'YYYY-MM-DD',
-    level: 'error',
-    maxSize: '20m',
-    maxFiles: '14d',
-    format: winston.format.combine(
-      winston.format.timestamp(),
-      winston.format.json()
-    )
-  }),
-  
-  // File transport for all logs
-  new DailyRotateFile({
-    filename: path.join(__dirname, '../../logs/combined-%DATE%.log'),
-    datePattern: 'YYYY-MM-DD',
-    maxSize: '20m',
-    maxFiles: '14d',
-    format: winston.format.combine(
-      winston.format.timestamp(),
-      winston.format.json()
-    )
-  })
-];
-
-// Create the logger
+// Créer le logger
 const logger = winston.createLogger({
-  level: level(),
-  levels,
-  format,
+  level: process.env.LOG_LEVEL || 'info',
+  format: winston.format.combine(
+    winston.format.timestamp(),
+    winston.format.errors({ stack: true }),
+    winston.format.json()
+  ),
   transports,
-  exitOnError: false,
+  exceptionHandlers: transports,
+  rejectionHandlers: transports
 });
 
-// Create a stream object for Morgan
-logger.stream = {
-  write: (message) => {
-    logger.http(message.trim());
-  },
+module.exports = {
+  logger
 };
-
-// Helper functions for structured logging
-logger.logAPIRequest = (req, res, responseTime) => {
-  logger.info('API Request', {
-    method: req.method,
-    url: req.url,
-    ip: req.ip,
-    userAgent: req.get('User-Agent'),
-    userId: req.user?.id,
-    responseTime: `${responseTime}ms`,
-    statusCode: res.statusCode
-  });
-};
-
-logger.logAPIError = (error, req) => {
-  logger.error('API Error', {
-    message: error.message,
-    stack: error.stack,
-    method: req?.method,
-    url: req?.url,
-    ip: req?.ip,
-    userId: req?.user?.id,
-    timestamp: new Date().toISOString()
-  });
-};
-
-logger.logPaymentTransaction = (transaction) => {
-  logger.info('Payment Transaction', {
-    transactionId: transaction.id,
-    userId: transaction.user_id,
-    amount: transaction.amount_xof,
-    currency: transaction.currency,
-    paymentMethod: transaction.payment_method,
-    status: transaction.status,
-    timestamp: new Date().toISOString()
-  });
-};
-
-logger.logWorkoutSession = (session) => {
-  logger.info('Workout Session', {
-    sessionId: session.id,
-    userId: session.user_id,
-    duration: session.duration_minutes,
-    caloriesBurned: session.calories_burned,
-    status: session.status,
-    timestamp: new Date().toISOString()
-  });
-};
-
-logger.logAIGeneration = (type, userId, confidence) => {
-  logger.info('AI Generation', {
-    type,
-    userId,
-    confidence,
-    timestamp: new Date().toISOString()
-  });
-};
-
-logger.logUserAction = (action, userId, details = {}) => {
-  logger.info('User Action', {
-    action,
-    userId,
-    details,
-    timestamp: new Date().toISOString()
-  });
-};
-
-module.exports = { logger };
