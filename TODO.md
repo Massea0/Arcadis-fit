@@ -18,15 +18,15 @@ Basé sur l'analyse du code, le projet Arcadis Fit présente une architecture so
 - [ ] **Implémenter les contrôleurs manquants**
   - [x] Créer `backend/src/controllers/` avec tous les contrôleurs
   - [x] **AuthController pour l'authentification complète** ✅
-  - [ ] UserController pour la gestion des profils
-  - [ ] PaymentController pour DEXCHANGE
+  - [x] **UserController pour la gestion des profils** ✅
+  - [x] **PaymentController pour DEXCHANGE** ✅
   - [ ] GymController pour la gestion des salles
   - [ ] WorkoutController pour les entraînements
   - [ ] NutritionController pour la nutrition
 
 - [ ] **Créer les services métier**
   - [x] **`backend/src/services/authService.js`** ✅
-  - [ ] `backend/src/services/paymentService.js`
+  - [x] **`backend/src/services/paymentService.js`** ✅
   - [x] **`backend/src/services/smsService.js` (Twilio)** ✅
   - [ ] `backend/src/services/aiService.js` (intégration Python)
   - [ ] `backend/src/services/qrCodeService.js`
@@ -42,6 +42,8 @@ Basé sur l'analyse du code, le projet Arcadis Fit présente une architecture so
 
 - [x] **Créer les routes d'authentification** ✅
   - [x] **`backend/src/routes/auth.js`** ✅
+  - [x] **`backend/src/routes/users.js`** ✅
+  - [x] **`backend/src/routes/payments.js`** ✅
 
 ### 📱 Applications Mobiles - Finalisation des Vues
 - [ ] **iOS - Compléter les vues manquantes**
