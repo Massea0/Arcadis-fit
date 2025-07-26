@@ -1,0 +1,362 @@
+[
+  {
+    "id": "ex_001",
+    "name": "Push-ups",
+    "name_fr": "Pompes",
+    "category": "strength",
+    "muscle_groups": ["chest", "arms", "shoulders"],
+    "equipment_needed": ["none"],
+    "difficulty_level": "beginner",
+    "is_senegalese": false,
+    "instructions": [
+      "Start in plank position with hands shoulder-width apart",
+      "Lower your body until chest nearly touches the ground",
+      "Push back up to starting position",
+      "Keep your body in a straight line throughout"
+    ],
+    "instructions_fr": [
+      "Commencez en position de planche avec les mains écartées de la largeur des épaules",
+      "Abaissez votre corps jusqu'à ce que la poitrine touche presque le sol",
+      "Remontez en poussant jusqu'à la position de départ",
+      "Gardez votre corps en ligne droite tout au long"
+    ],
+    "video_url": null,
+    "image_url": null,
+    "estimated_calories_per_minute": 8.0,
+    "rest_time_seconds": 60,
+    "sets_recommended": {
+      "beginner": [2, 3],
+      "intermediate": [3, 4],
+      "advanced": [4, 5]
+    },
+    "reps_recommended": {
+      "beginner": [5, 10],
+      "intermediate": [10, 20],
+      "advanced": [20, 30]
+    }
+  },
+  {
+    "id": "ex_002",
+    "name": "Squats",
+    "name_fr": "Squats",
+    "category": "strength",
+    "muscle_groups": ["legs", "glutes"],
+    "equipment_needed": ["none"],
+    "difficulty_level": "beginner",
+    "is_senegalese": false,
+    "instructions": [
+      "Stand with feet shoulder-width apart",
+      "Lower your body as if sitting back into a chair",
+      "Keep your knees behind your toes",
+      "Return to standing position"
+    ],
+    "instructions_fr": [
+      "Tenez-vous debout, pieds écartés de la largeur des épaules",
+      "Abaissez votre corps comme si vous vous asseyiez sur une chaise",
+      "Gardez vos genoux derrière vos orteils",
+      "Remontez à la position debout"
+    ],
+    "video_url": null,
+    "image_url": null,
+    "estimated_calories_per_minute": 6.0,
+    "rest_time_seconds": 60,
+    "sets_recommended": {
+      "beginner": [2, 3],
+      "intermediate": [3, 4],
+      "advanced": [4, 5]
+    },
+    "reps_recommended": {
+      "beginner": [10, 15],
+      "intermediate": [15, 20],
+      "advanced": [20, 25]
+    }
+  },
+  {
+    "id": "ex_003",
+    "name": "Plank",
+    "name_fr": "Planche",
+    "category": "strength",
+    "muscle_groups": ["core", "shoulders"],
+    "equipment_needed": ["none"],
+    "difficulty_level": "beginner",
+    "is_senegalese": false,
+    "instructions": [
+      "Start in push-up position",
+      "Lower onto your forearms",
+      "Keep your body in a straight line",
+      "Hold the position"
+    ],
+    "instructions_fr": [
+      "Commencez en position de pompe",
+      "Descendez sur vos avant-bras",
+      "Gardez votre corps en ligne droite",
+      "Maintenez la position"
+    ],
+    "video_url": null,
+    "image_url": null,
+    "estimated_calories_per_minute": 4.0,
+    "rest_time_seconds": 60,
+    "sets_recommended": {
+      "beginner": [2, 3],
+      "intermediate": [3, 4],
+      "advanced": [4, 5]
+    },
+    "reps_recommended": {
+      "beginner": [20, 30],
+      "intermediate": [30, 45],
+      "advanced": [45, 60]
+    }
+  },
+  {
+    "id": "ex_004",
+    "name": "Jumping Jacks",
+    "name_fr": "Jumping Jacks",
+    "category": "cardio",
+    "muscle_groups": ["legs", "arms"],
+    "equipment_needed": ["none"],
+    "difficulty_level": "beginner",
+    "is_senegalese": false,
+    "instructions": [
+      "Start standing with feet together",
+      "Jump and spread legs while raising arms",
+      "Jump back to starting position",
+      "Repeat continuously"
+    ],
+    "instructions_fr": [
+      "Commencez debout avec les pieds joints",
+      "Sautez et écartez les jambes en levant les bras",
+      "Sautez pour revenir à la position de départ",
+      "Répétez continuellement"
+    ],
+    "video_url": null,
+    "image_url": null,
+    "estimated_calories_per_minute": 10.0,
+    "rest_time_seconds": 30,
+    "sets_recommended": {
+      "beginner": [1, 1],
+      "intermediate": [1, 1],
+      "advanced": [1, 1]
+    },
+    "reps_recommended": {
+      "beginner": [20, 30],
+      "intermediate": [30, 50],
+      "advanced": [50, 100]
+    }
+  },
+  {
+    "id": "ex_005",
+    "name": "Burpees",
+    "name_fr": "Burpees",
+    "category": "cardio",
+    "muscle_groups": ["full_body"],
+    "equipment_needed": ["none"],
+    "difficulty_level": "intermediate",
+    "is_senegalese": false,
+    "instructions": [
+      "Start standing, then squat down",
+      "Place hands on ground and jump feet back",
+      "Do a push-up, then jump feet forward",
+      "Jump up with arms overhead"
+    ],
+    "instructions_fr": [
+      "Commencez debout, puis accroupissez-vous",
+      "Placez les mains au sol et sautez les pieds en arrière",
+      "Faites une pompe, puis sautez les pieds en avant",
+      "Sautez en levant les bras"
+    ],
+    "video_url": null,
+    "image_url": null,
+    "estimated_calories_per_minute": 12.0,
+    "rest_time_seconds": 90,
+    "sets_recommended": {
+      "beginner": [2, 3],
+      "intermediate": [3, 4],
+      "advanced": [4, 5]
+    },
+    "reps_recommended": {
+      "beginner": [5, 10],
+      "intermediate": [10, 15],
+      "advanced": [15, 20]
+    }
+  },
+  {
+    "id": "ex_006",
+    "name": "Mountain Climbers",
+    "name_fr": "Grimpeur",
+    "category": "cardio",
+    "muscle_groups": ["core", "legs"],
+    "equipment_needed": ["none"],
+    "difficulty_level": "intermediate",
+    "is_senegalese": false,
+    "instructions": [
+      "Start in plank position",
+      "Drive one knee toward chest",
+      "Quickly switch legs",
+      "Continue alternating rapidly"
+    ],
+    "instructions_fr": [
+      "Commencez en position de planche",
+      "Ramenez un genou vers la poitrine",
+      "Changez rapidement de jambe",
+      "Continuez en alternant rapidement"
+    ],
+    "video_url": null,
+    "image_url": null,
+    "estimated_calories_per_minute": 9.0,
+    "rest_time_seconds": 60,
+    "sets_recommended": {
+      "beginner": [2, 3],
+      "intermediate": [3, 4],
+      "advanced": [4, 5]
+    },
+    "reps_recommended": {
+      "beginner": [20, 30],
+      "intermediate": [30, 50],
+      "advanced": [50, 80]
+    }
+  },
+  {
+    "id": "ex_007",
+    "name": "Lunges",
+    "name_fr": "Fentes",
+    "category": "strength",
+    "muscle_groups": ["legs", "glutes"],
+    "equipment_needed": ["none"],
+    "difficulty_level": "beginner",
+    "is_senegalese": false,
+    "instructions": [
+      "Step forward with one leg",
+      "Lower your body until both knees are bent",
+      "Keep front knee behind toes",
+      "Push back to starting position"
+    ],
+    "instructions_fr": [
+      "Faites un pas en avant avec une jambe",
+      "Abaissez votre corps jusqu'à ce que les deux genoux soient pliés",
+      "Gardez le genou avant derrière les orteils",
+      "Poussez pour revenir à la position de départ"
+    ],
+    "video_url": null,
+    "image_url": null,
+    "estimated_calories_per_minute": 5.0,
+    "rest_time_seconds": 60,
+    "sets_recommended": {
+      "beginner": [2, 3],
+      "intermediate": [3, 4],
+      "advanced": [4, 5]
+    },
+    "reps_recommended": {
+      "beginner": [8, 12],
+      "intermediate": [12, 16],
+      "advanced": [16, 20]
+    }
+  },
+  {
+    "id": "ex_008",
+    "name": "High Knees",
+    "name_fr": "Genoux Hauts",
+    "category": "cardio",
+    "muscle_groups": ["legs", "core"],
+    "equipment_needed": ["none"],
+    "difficulty_level": "beginner",
+    "is_senegalese": false,
+    "instructions": [
+      "Stand in place",
+      "Run in place, bringing knees up high",
+      "Pump your arms as you run",
+      "Maintain good posture"
+    ],
+    "instructions_fr": [
+      "Tenez-vous sur place",
+      "Courez sur place en levant les genoux haut",
+      "Pompez vos bras en courant",
+      "Maintenez une bonne posture"
+    ],
+    "video_url": null,
+    "image_url": null,
+    "estimated_calories_per_minute": 8.0,
+    "rest_time_seconds": 45,
+    "sets_recommended": {
+      "beginner": [1, 1],
+      "intermediate": [1, 1],
+      "advanced": [1, 1]
+    },
+    "reps_recommended": {
+      "beginner": [30, 45],
+      "intermediate": [45, 60],
+      "advanced": [60, 90]
+    }
+  },
+  {
+    "id": "ex_009",
+    "name": "Tricep Dips",
+    "name_fr": "Dips Triceps",
+    "category": "strength",
+    "muscle_groups": ["arms", "shoulders"],
+    "equipment_needed": ["chair"],
+    "difficulty_level": "intermediate",
+    "is_senegalese": false,
+    "instructions": [
+      "Sit on edge of chair with hands beside hips",
+      "Slide off chair, supporting weight with arms",
+      "Lower body by bending elbows",
+      "Push back up to starting position"
+    ],
+    "instructions_fr": [
+      "Asseyez-vous au bord d'une chaise avec les mains à côté des hanches",
+      "Glissez hors de la chaise en supportant le poids avec les bras",
+      "Abaissez le corps en pliant les coudes",
+      "Remontez en poussant jusqu'à la position de départ"
+    ],
+    "video_url": null,
+    "image_url": null,
+    "estimated_calories_per_minute": 6.0,
+    "rest_time_seconds": 75,
+    "sets_recommended": {
+      "beginner": [2, 3],
+      "intermediate": [3, 4],
+      "advanced": [4, 5]
+    },
+    "reps_recommended": {
+      "beginner": [5, 10],
+      "intermediate": [10, 15],
+      "advanced": [15, 20]
+    }
+  },
+  {
+    "id": "ex_010",
+    "name": "Butterfly Stretch",
+    "name_fr": "Étirement Papillon",
+    "category": "flexibility",
+    "muscle_groups": ["legs", "hips"],
+    "equipment_needed": ["none"],
+    "difficulty_level": "beginner",
+    "is_senegalese": false,
+    "instructions": [
+      "Sit on floor with soles of feet together",
+      "Hold feet with hands",
+      "Gently press knees toward floor",
+      "Hold stretch for 30 seconds"
+    ],
+    "instructions_fr": [
+      "Asseyez-vous au sol avec les plantes des pieds ensemble",
+      "Tenez vos pieds avec vos mains",
+      "Appuyez doucement les genoux vers le sol",
+      "Maintenez l'étirement pendant 30 secondes"
+    ],
+    "video_url": null,
+    "image_url": null,
+    "estimated_calories_per_minute": 2.0,
+    "rest_time_seconds": 30,
+    "sets_recommended": {
+      "beginner": [1, 2],
+      "intermediate": [2, 3],
+      "advanced": [3, 4]
+    },
+    "reps_recommended": {
+      "beginner": [30, 45],
+      "intermediate": [45, 60],
+      "advanced": [60, 90]
+    }
+  }
+]

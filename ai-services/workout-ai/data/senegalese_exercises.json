@@ -1,0 +1,432 @@
+[
+  {
+    "id": "sen_ex_001",
+    "name": "Traditional Wrestling Stance",
+    "name_fr": "Position de Lutte Traditionnelle",
+    "name_wo": "Lamb",
+    "category": "strength",
+    "muscle_groups": ["legs", "core", "shoulders"],
+    "equipment_needed": ["none"],
+    "difficulty_level": "beginner",
+    "is_senegalese": true,
+    "instructions": [
+      "Stand with feet shoulder-width apart",
+      "Bend knees slightly",
+      "Keep back straight",
+      "Hold position for 30-60 seconds"
+    ],
+    "instructions_fr": [
+      "Tenez-vous debout, pieds écartés de la largeur des épaules",
+      "Pliez légèrement les genoux",
+      "Gardez le dos droit",
+      "Maintenez la position pendant 30-60 secondes"
+    ],
+    "instructions_wo": [
+      "Taxaw ci tànk yi, tànk yi dëkk ci yoon yi",
+      "Lëmmët tànk yi",
+      "Dëkk ci yoon yi",
+      "Dëkk ci yoon yi ci 30-60 sëkond"
+    ],
+    "video_url": null,
+    "image_url": null,
+    "estimated_calories_per_minute": 3.0,
+    "rest_time_seconds": 60,
+    "sets_recommended": {
+      "beginner": [2, 3],
+      "intermediate": [3, 4],
+      "advanced": [4, 5]
+    },
+    "reps_recommended": {
+      "beginner": [30, 45],
+      "intermediate": [45, 60],
+      "advanced": [60, 90]
+    }
+  },
+  {
+    "id": "sen_ex_002",
+    "name": "Rice Sack Lift",
+    "name_fr": "Soulèvement de Sac de Riz",
+    "name_wo": "Dënn Ceeb",
+    "category": "strength",
+    "muscle_groups": ["legs", "back", "arms"],
+    "equipment_needed": ["rice_sack"],
+    "difficulty_level": "intermediate",
+    "is_senegalese": true,
+    "instructions": [
+      "Stand next to a rice sack",
+      "Bend knees and grip the sack",
+      "Lift with legs, not back",
+      "Hold briefly, then lower"
+    ],
+    "instructions_fr": [
+      "Tenez-vous à côté d'un sac de riz",
+      "Pliez les genoux et saisissez le sac",
+      "Soulevez avec les jambes, pas le dos",
+      "Maintenez brièvement, puis abaissez"
+    ],
+    "instructions_wo": [
+      "Taxaw ci wet yi",
+      "Lëmmët tànk yi ak dënn",
+      "Dënn ak tànk yi, du ci yoon yi",
+      "Dëkk ci yoon yi, gannaaw dënn"
+    ],
+    "video_url": null,
+    "image_url": null,
+    "estimated_calories_per_minute": 8.0,
+    "rest_time_seconds": 90,
+    "sets_recommended": {
+      "beginner": [2, 3],
+      "intermediate": [3, 4],
+      "advanced": [4, 5]
+    },
+    "reps_recommended": {
+      "beginner": [5, 8],
+      "intermediate": [8, 12],
+      "advanced": [12, 15]
+    }
+  },
+  {
+    "id": "sen_ex_003",
+    "name": "Beach Running",
+    "name_fr": "Course sur la Plage",
+    "name_wo": "Daw ci Gox Géej",
+    "category": "cardio",
+    "muscle_groups": ["legs", "core"],
+    "equipment_needed": ["none"],
+    "difficulty_level": "beginner",
+    "is_senegalese": true,
+    "instructions": [
+      "Find a safe beach area",
+      "Run on wet sand for better footing",
+      "Start with 10-15 minutes",
+      "Gradually increase duration"
+    ],
+    "instructions_fr": [
+      "Trouvez une zone de plage sûre",
+      "Courez sur le sable mouillé pour un meilleur appui",
+      "Commencez par 10-15 minutes",
+      "Augmentez progressivement la durée"
+    ],
+    "instructions_wo": [
+      "Seet gox géej yi",
+      "Daw ci dox yi",
+      "Faraal ak 10-15 minut",
+      "Dënn ci yoon yi"
+    ],
+    "video_url": null,
+    "image_url": null,
+    "estimated_calories_per_minute": 10.0,
+    "rest_time_seconds": 120,
+    "sets_recommended": {
+      "beginner": [1, 1],
+      "intermediate": [1, 1],
+      "advanced": [1, 1]
+    },
+    "reps_recommended": {
+      "beginner": [10, 15],
+      "intermediate": [15, 25],
+      "advanced": [25, 45]
+    }
+  },
+  {
+    "id": "sen_ex_004",
+    "name": "Traditional Dance Moves",
+    "name_fr": "Mouvements de Danse Traditionnelle",
+    "name_wo": "Fecc",
+    "category": "cardio",
+    "muscle_groups": ["legs", "core", "arms"],
+    "equipment_needed": ["none"],
+    "difficulty_level": "beginner",
+    "is_senegalese": true,
+    "instructions": [
+      "Learn basic Sabar dance steps",
+      "Move hips in circular motion",
+      "Coordinate arm movements",
+      "Maintain rhythm and energy"
+    ],
+    "instructions_fr": [
+      "Apprenez les pas de base de la danse Sabar",
+      "Bougez les hanches en mouvement circulaire",
+      "Coordonnez les mouvements des bras",
+      "Maintenez le rythme et l'énergie"
+    ],
+    "instructions_wo": [
+      "Jàng tànk yi",
+      "Dënn ci yoon yi",
+      "Dënn ci yoon yi",
+      "Dëkk ci yoon yi"
+    ],
+    "video_url": null,
+    "image_url": null,
+    "estimated_calories_per_minute": 7.0,
+    "rest_time_seconds": 60,
+    "sets_recommended": {
+      "beginner": [1, 1],
+      "intermediate": [1, 1],
+      "advanced": [1, 1]
+    },
+    "reps_recommended": {
+      "beginner": [15, 20],
+      "intermediate": [20, 30],
+      "advanced": [30, 45]
+    }
+  },
+  {
+    "id": "sen_ex_005",
+    "name": "Palm Tree Climbing",
+    "name_fr": "Escalade de Palmier",
+    "name_wo": "Yéeg Tàndarma",
+    "category": "strength",
+    "muscle_groups": ["arms", "back", "core"],
+    "equipment_needed": ["palm_tree"],
+    "difficulty_level": "advanced",
+    "is_senegalese": true,
+    "instructions": [
+      "Use proper climbing technique",
+      "Grip with hands and feet",
+      "Climb slowly and safely",
+      "Descend carefully"
+    ],
+    "instructions_fr": [
+      "Utilisez une technique d'escalade appropriée",
+      "Saisissez avec les mains et les pieds",
+      "Grimpez lentement et en sécurité",
+      "Descendez prudemment"
+    ],
+    "instructions_wo": [
+      "Jëfandikoo tànk yi",
+      "Dënn ak loxo yi ak tànk yi",
+      "Yéeg ci yoon yi",
+      "Wàcc ci yoon yi"
+    ],
+    "video_url": null,
+    "image_url": null,
+    "estimated_calories_per_minute": 12.0,
+    "rest_time_seconds": 180,
+    "sets_recommended": {
+      "beginner": [1, 2],
+      "intermediate": [2, 3],
+      "advanced": [3, 4]
+    },
+    "reps_recommended": {
+      "beginner": [1, 2],
+      "intermediate": [2, 3],
+      "advanced": [3, 5]
+    }
+  },
+  {
+    "id": "sen_ex_006",
+    "name": "Fish Market Carry",
+    "name_fr": "Port de Poisson du Marché",
+    "name_wo": "Dënn Jën",
+    "category": "strength",
+    "muscle_groups": ["arms", "shoulders", "core"],
+    "equipment_needed": ["fish_basket"],
+    "difficulty_level": "intermediate",
+    "is_senegalese": true,
+    "instructions": [
+      "Carry fish basket on head",
+      "Keep spine straight",
+      "Walk with steady pace",
+      "Switch sides periodically"
+    ],
+    "instructions_fr": [
+      "Portez le panier de poisson sur la tête",
+      "Gardez la colonne vertébrale droite",
+      "Marchez à un rythme régulier",
+      "Changez de côté périodiquement"
+    ],
+    "instructions_wo": [
+      "Dënn ci bopp",
+      "Dëkk ci yoon yi",
+      "Daw ci yoon yi",
+      "Dënn ci yoon yi"
+    ],
+    "video_url": null,
+    "image_url": null,
+    "estimated_calories_per_minute": 6.0,
+    "rest_time_seconds": 90,
+    "sets_recommended": {
+      "beginner": [2, 3],
+      "intermediate": [3, 4],
+      "advanced": [4, 5]
+    },
+    "reps_recommended": {
+      "beginner": [5, 10],
+      "intermediate": [10, 15],
+      "advanced": [15, 20]
+    }
+  },
+  {
+    "id": "sen_ex_007",
+    "name": "Baobab Tree Stretching",
+    "name_fr": "Étirements du Baobab",
+    "name_wo": "Lëmmët Guy",
+    "category": "flexibility",
+    "muscle_groups": ["full_body"],
+    "equipment_needed": ["baobab_tree"],
+    "difficulty_level": "beginner",
+    "is_senegalese": true,
+    "instructions": [
+      "Use baobab tree for support",
+      "Stretch arms overhead",
+      "Lean into stretches gently",
+      "Hold each stretch 30 seconds"
+    ],
+    "instructions_fr": [
+      "Utilisez le baobab comme support",
+      "Étirez les bras au-dessus de la tête",
+      "Penchez-vous doucement dans les étirements",
+      "Maintenez chaque étirement 30 secondes"
+    ],
+    "instructions_wo": [
+      "Jëfandikoo guy",
+      "Dënn ci yoon yi",
+      "Dënn ci yoon yi",
+      "Dëkk ci yoon yi"
+    ],
+    "video_url": null,
+    "image_url": null,
+    "estimated_calories_per_minute": 2.0,
+    "rest_time_seconds": 30,
+    "sets_recommended": {
+      "beginner": [1, 2],
+      "intermediate": [2, 3],
+      "advanced": [3, 4]
+    },
+    "reps_recommended": {
+      "beginner": [30, 45],
+      "intermediate": [45, 60],
+      "advanced": [60, 90]
+    }
+  },
+  {
+    "id": "sen_ex_008",
+    "name": "Market Walking",
+    "name_fr": "Marche du Marché",
+    "name_wo": "Daw ci Marché",
+    "category": "cardio",
+    "muscle_groups": ["legs", "core"],
+    "equipment_needed": ["none"],
+    "difficulty_level": "beginner",
+    "is_senegalese": true,
+    "instructions": [
+      "Walk briskly through market",
+      "Carry shopping bags",
+      "Navigate through crowds",
+      "Maintain steady pace"
+    ],
+    "instructions_fr": [
+      "Marchez rapidement dans le marché",
+      "Portez des sacs de courses",
+      "Naviguez dans la foule",
+      "Maintenez un rythme régulier"
+    ],
+    "instructions_wo": [
+      "Daw ci yoon yi",
+      "Dënn ci yoon yi",
+      "Daw ci yoon yi",
+      "Dëkk ci yoon yi"
+    ],
+    "video_url": null,
+    "image_url": null,
+    "estimated_calories_per_minute": 5.0,
+    "rest_time_seconds": 60,
+    "sets_recommended": {
+      "beginner": [1, 1],
+      "intermediate": [1, 1],
+      "advanced": [1, 1]
+    },
+    "reps_recommended": {
+      "beginner": [20, 30],
+      "intermediate": [30, 45],
+      "advanced": [45, 60]
+    }
+  },
+  {
+    "id": "sen_ex_009",
+    "name": "Traditional Push-ups",
+    "name_fr": "Pompes Traditionnelles",
+    "name_wo": "Pompes",
+    "category": "strength",
+    "muscle_groups": ["chest", "arms", "shoulders"],
+    "equipment_needed": ["none"],
+    "difficulty_level": "beginner",
+    "is_senegalese": true,
+    "instructions": [
+      "Start in plank position",
+      "Lower body to ground",
+      "Push back up",
+      "Keep body straight"
+    ],
+    "instructions_fr": [
+      "Commencez en position de planche",
+      "Abaissez le corps au sol",
+      "Remontez en poussant",
+      "Gardez le corps droit"
+    ],
+    "instructions_wo": [
+      "Faraal ci yoon yi",
+      "Dënn ci yoon yi",
+      "Dënn ci yoon yi",
+      "Dëkk ci yoon yi"
+    ],
+    "video_url": null,
+    "image_url": null,
+    "estimated_calories_per_minute": 8.0,
+    "rest_time_seconds": 60,
+    "sets_recommended": {
+      "beginner": [2, 3],
+      "intermediate": [3, 4],
+      "advanced": [4, 5]
+    },
+    "reps_recommended": {
+      "beginner": [5, 10],
+      "intermediate": [10, 20],
+      "advanced": [20, 30]
+    }
+  },
+  {
+    "id": "sen_ex_010",
+    "name": "Ocean Swimming",
+    "name_fr": "Natation en Océan",
+    "name_wo": "Fënn ci Géej",
+    "category": "cardio",
+    "muscle_groups": ["full_body"],
+    "equipment_needed": ["ocean"],
+    "difficulty_level": "intermediate",
+    "is_senegalese": true,
+    "instructions": [
+      "Swim in safe ocean area",
+      "Use proper swimming technique",
+      "Start with short distances",
+      "Always swim with a partner"
+    ],
+    "instructions_fr": [
+      "Nagez dans une zone océanique sûre",
+      "Utilisez une technique de nage appropriée",
+      "Commencez par de courtes distances",
+      "Nagez toujours avec un partenaire"
+    ],
+    "instructions_wo": [
+      "Fënn ci yoon yi",
+      "Jëfandikoo tànk yi",
+      "Faraal ak yoon yi",
+      "Fënn ak yoon yi"
+    ],
+    "video_url": null,
+    "image_url": null,
+    "estimated_calories_per_minute": 12.0,
+    "rest_time_seconds": 120,
+    "sets_recommended": {
+      "beginner": [1, 1],
+      "intermediate": [1, 1],
+      "advanced": [1, 1]
+    },
+    "reps_recommended": {
+      "beginner": [10, 15],
+      "intermediate": [15, 25],
+      "advanced": [25, 40]
+    }
+  }
+]
