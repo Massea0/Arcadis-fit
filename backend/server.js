@@ -6,10 +6,13 @@ const compression = require('compression');
 const rateLimit = require('express-rate-limit');
 require('dotenv').config();
 
+// Supabase configuration
+const { testConnection } = require('./src/config/supabase');
+
 const { logger } = require('./src/utils/logger');
 const { errorHandler } = require('./src/middleware/errorHandler');
 const { notFoundHandler } = require('./src/middleware/notFoundHandler');
-const { authMiddleware } = require('./src/middleware/authMiddleware');
+const { authenticateUser } = require('./src/middleware/auth');
 
 // Import routes
 const authRoutes = require('./src/routes/auth');
@@ -84,14 +87,14 @@ app.get('/health', (req, res) => {
 
 // API routes
 app.use('/api/auth', authRoutes);
-app.use('/api/users', authMiddleware, userRoutes);
-app.use('/api/memberships', authMiddleware, membershipRoutes);
-app.use('/api/payments', authMiddleware, paymentRoutes);
-app.use('/api/nutrition', authMiddleware, nutritionRoutes);
-app.use('/api/workouts', authMiddleware, workoutRoutes);
-app.use('/api/ai', authMiddleware, aiRoutes);
-app.use('/api/gyms', authMiddleware, gymRoutes);
-app.use('/api/notifications', authMiddleware, notificationRoutes);
+app.use('/api/users', authenticateUser, userRoutes);
+app.use('/api/memberships', authenticateUser, membershipRoutes);
+app.use('/api/payments', authenticateUser, paymentRoutes);
+app.use('/api/nutrition', authenticateUser, nutritionRoutes);
+app.use('/api/workouts', authenticateUser, workoutRoutes);
+app.use('/api/ai', authenticateUser, aiRoutes);
+app.use('/api/gyms', authenticateUser, gymRoutes);
+app.use('/api/notifications', authenticateUser, notificationRoutes);
 
 // Swagger documentation
 if (process.env.NODE_ENV !== 'production') {
@@ -164,10 +167,18 @@ process.on('uncaughtException', (error) => {
 });
 
 // Start server
-app.listen(PORT, () => {
+app.listen(PORT, async () => {
   logger.info(`🚀 Arcadis Fit API server running on port ${PORT}`);
   logger.info(`📚 API Documentation available at http://localhost:${PORT}/api-docs`);
   logger.info(`🏥 Health check available at http://localhost:${PORT}/health`);
+  
+  // Test Supabase connection
+  const isConnected = await testConnection();
+  if (isConnected) {
+    logger.info('🗄️  Base de données Supabase connectée avec succès');
+  } else {
+    logger.error('❌ Impossible de se connecter à Supabase. Vérifiez vos variables d\'environnement.');
+  }
 });
 
 module.exports = app;
