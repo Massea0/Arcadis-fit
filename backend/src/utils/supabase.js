@@ -1,5 +1,12 @@
 const { createClient } = require('@supabase/supabase-js');
-const logger = require('./logger');
+
+// Import logger avec gestion d'erreur
+let logger;
+try {
+  logger = require('./logger');
+} catch (error) {
+  logger = console; // Fallback vers console
+}
 
 // Supabase configuration
 const supabaseUrl = process.env.SUPABASE_URL;
