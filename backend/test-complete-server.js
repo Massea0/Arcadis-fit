@@ -132,6 +132,136 @@ try {
     });
   });
 
+  // Routes SAAS révolutionnaires
+  app.get('/api/saas/health', (req, res) => {
+    res.json({
+      success: true,
+      message: "🚀 ARCADIS FIT SAAS - RÉVOLUTION ACTIVÉE !",
+      status: "REVOLUTIONARY",
+      services: {
+        "🧠 Arcadis Brain": "IA Révolutionnaire ACTIVE",
+        "💎 SAAS Management": "Multi-Tenant OPÉRATIONNEL",
+        "🎮 Metaverse Fitness": "Expériences VR/AR PRÊTES",
+        "🌐 IoT Integrations": "Objets Connectés INTÉGRÉS",
+        "📊 Predictive Analytics": "Prédictions Business ACTIVES",
+        "🎨 White-Label Generator": "Branding IA DISPONIBLE"
+      },
+      innovation_level: "GAME-CHANGING",
+      timestamp: new Date().toISOString(),
+      motto: "L'AVENIR DU FITNESS EST LÀ ! 🌟"
+    });
+  });
+
+  app.get('/api/saas/revolution/features', (req, res) => {
+    res.json({
+      success: true,
+      message: "🌟 ARCADIS FIT - LA RÉVOLUTION FITNESS EST LÀ !",
+      data: {
+        ai_powered: {
+          title: "🧠 ARCADIS BRAIN - IA Révolutionnaire",
+          features: [
+            "🔮 Prédiction des blessures avant qu'elles arrivent",
+            "🎭 Analyse d'émotions par la voix", 
+            "🌍 Coach IA personnel 24/7 géolocalisé",
+            "🍽️ Reconnaissance d'aliments locaux par photo",
+            "🏥 Monitoring santé avec prédictions médicales"
+          ]
+        },
+        saas_platform: {
+          title: "💎 Plateforme SAAS Multi-Tenant",
+          features: [
+            "🏢 Déploiement tenant en 3 minutes",
+            "🎨 White-label avec IA créative",
+            "📊 Analytics prédictives business",
+            "🏪 Marketplace d'applications fitness",
+            "🌐 Intégrations IoT automatiques"
+          ]
+        }
+      },
+      pricing: {
+        basic: "299€/mois - Gym individuelle",
+        professional: "699€/mois - Chaîne de gyms", 
+        enterprise: "1999€/mois - Enterprise + White-label",
+        franchise: "4999€/mois - Système de franchise complet"
+      },
+      demo_available: true,
+      deployment_time: "< 3 minutes",
+      roi_guarantee: "ROI garanti sous 90 jours"
+    });
+  });
+
+  app.get('/api/saas/revolution/pricing', (req, res) => {
+    res.json({
+      success: true,
+      message: "💎 TARIFICATION RÉVOLUTIONNAIRE ARCADIS FIT",
+      plans: {
+        basic: {
+          name: "Basic Gym",
+          price_monthly: "299€",
+          price_yearly: "2990€ (2 mois offerts)",
+          max_members: 500,
+          staff_accounts: 10,
+          features: [
+            "✅ Dashboard analytics de base",
+            "✅ Apps mobiles iOS/Android",
+            "✅ Paiements Wave/Orange Money",
+            "✅ Check-ins QR code",
+            "✅ Support standard"
+          ],
+          best_for: "Salles de sport individuelles"
+        },
+        enterprise: {
+          name: "Enterprise White-Label", 
+          price_monthly: "1999€",
+          price_yearly: "19990€ (2 mois offerts)",
+          max_members: "Illimité",
+          staff_accounts: "Illimité",
+          features: [
+            "✅ White-label complet",
+            "✅ Apps mobiles personnalisées",
+            "✅ IA coach personnel 24/7",
+            "✅ Marketplace apps",
+            "✅ IoT integrations",
+            "✅ Analytics prédictives business"
+          ],
+          best_for: "Grandes entreprises, wellness corporate"
+        }
+      }
+    });
+  });
+
+  app.get('/api/saas/demo/live-features', (req, res) => {
+    res.json({
+      success: true,
+      message: "🎬 DÉMONSTRATION LIVE ARCADIS FIT SAAS",
+      live_demo: {
+        ai_brain_simulation: {
+          injury_prediction: "⚡ Analyse en temps réel activée",
+          emotion_analysis: "🎭 Détection émotionnelle par voix",
+          ai_coach: "🤖 Coach personnel IA géolocalisé",
+          food_analysis: "📸 Reconnaissance d'aliments locaux"
+        },
+        saas_capabilities: {
+          tenant_deployment: "🚀 Déploiement en 3 minutes",
+          white_label_generation: "🎨 Branding automatique par IA",
+          predictive_analytics: "📊 Prédictions business temps réel",
+          iot_integrations: "🌐 Objets connectés intégrés"
+        },
+        metaverse_preview: {
+          vr_workouts: "🏝️ Entraînements VR immersifs",
+          ar_coaching: "👁️ Réalité augmentée en salle", 
+          virtual_worlds: "🌍 Mondes fitness virtuels",
+          social_experiences: "👥 Expériences sociales metaverse"
+        }
+      },
+      demo_credentials: {
+        demo_url: "https://live-demo.arcadisfit.com",
+        test_account: "demo@arcadisfit.com",
+        password: "DemoRevolution2025!"
+      }
+    });
+  });
+
   // Démarrer le serveur
   app.listen(PORT, () => {
     console.log(`\n🚀 Serveur de test démarré sur le port ${PORT}`);

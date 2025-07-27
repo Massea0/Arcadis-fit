@@ -24,6 +24,7 @@ const workoutRoutes = require('./src/routes/workouts');
 const aiRoutes = require('./src/routes/ai');
 const gymRoutes = require('./src/routes/gyms');
 const notificationRoutes = require('./src/routes/notifications');
+const saasRoutes = require('./src/routes/saas');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -95,6 +96,7 @@ app.use('/api/workouts', workoutRoutes);
 app.use('/api/ai', authenticateUser, aiRoutes);
 app.use('/api/gyms', gymRoutes);
 app.use('/api/notifications', notificationRoutes);
+app.use('/api/saas', saasRoutes);
 
 // Swagger documentation
 if (process.env.NODE_ENV !== 'production') {
