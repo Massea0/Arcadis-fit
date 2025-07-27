@@ -91,9 +91,9 @@ app.use('/api/users', authenticateUser, userRoutes);
 app.use('/api/memberships', authenticateUser, membershipRoutes);
 app.use('/api/payments', authenticateUser, paymentRoutes);
 app.use('/api/nutrition', authenticateUser, nutritionRoutes);
-app.use('/api/workouts', authenticateUser, workoutRoutes);
+app.use('/api/workouts', workoutRoutes);
 app.use('/api/ai', authenticateUser, aiRoutes);
-app.use('/api/gyms', authenticateUser, gymRoutes);
+app.use('/api/gyms', gymRoutes);
 app.use('/api/notifications', authenticateUser, notificationRoutes);
 
 // Swagger documentation

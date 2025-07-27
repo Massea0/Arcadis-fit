@@ -1,6 +1,12 @@
 const axios = require('axios');
 const crypto = require('crypto');
-const logger = require('../utils/logger');
+// Logger simple pour éviter les imports circulaires
+const logger = {
+  info: (msg, ...args) => console.log(`[INFO] ${msg}`, ...args),
+  error: (msg, ...args) => console.error(`[ERROR] ${msg}`, ...args),
+  warn: (msg, ...args) => console.warn(`[WARN] ${msg}`, ...args),
+  debug: (msg, ...args) => console.debug(`[DEBUG] ${msg}`, ...args)
+};
 
 class PaymentService {
   constructor() {

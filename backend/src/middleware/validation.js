@@ -532,6 +532,110 @@ const createCustomValidation = (validationRules) => {
   ];
 };
 
+/**
+ * Gym review validation
+ */
+const validateGymReview = [
+  body('rating')
+    .isInt({ min: 1, max: 5 })
+    .withMessage('La note doit être entre 1 et 5'),
+  
+  body('comment')
+    .optional()
+    .isString()
+    .isLength({ max: 500 })
+    .withMessage('Le commentaire ne peut pas dépasser 500 caractères'),
+  
+  handleValidationErrors
+];
+
+/**
+ * Check-in validation
+ */
+const validateCheckIn = [
+  body('qrCode')
+    .notEmpty()
+    .withMessage('QR Code requis'),
+  
+  body('gymId')
+    .isUUID()
+    .withMessage('ID de salle invalide'),
+  
+  handleValidationErrors
+];
+
+/**
+ * Workout creation validation
+ */
+const validateWorkout = [
+  body('name')
+    .notEmpty()
+    .withMessage('Nom de l\'entraînement requis'),
+  
+  body('description')
+    .optional()
+    .isString(),
+  
+  body('exercises')
+    .optional()
+    .isArray()
+    .withMessage('Les exercices doivent être un tableau'),
+  
+  body('scheduledDate')
+    .optional()
+    .isISO8601()
+    .withMessage('Date programmée invalide'),
+  
+  handleValidationErrors
+];
+
+/**
+ * Exercise set validation
+ */
+const validateExerciseSet = [
+  body('setNumber')
+    .isInt({ min: 1 })
+    .withMessage('Numéro de série invalide'),
+  
+  body('reps')
+    .optional()
+    .isInt({ min: 0 })
+    .withMessage('Répétitions invalides'),
+  
+  body('weight_kg')
+    .optional()
+    .isFloat({ min: 0 })
+    .withMessage('Poids invalide'),
+  
+  body('duration_seconds')
+    .optional()
+    .isInt({ min: 0 })
+    .withMessage('Durée invalide'),
+  
+  handleValidationErrors
+];
+
+/**
+ * Workout completion validation
+ */
+const validateWorkoutCompletion = [
+  body('notes')
+    .optional()
+    .isString(),
+  
+  body('caloriesBurned')
+    .optional()
+    .isInt({ min: 0 })
+    .withMessage('Calories brûlées invalides'),
+  
+  body('rating')
+    .optional()
+    .isInt({ min: 1, max: 5 })
+    .withMessage('Note invalide'),
+  
+  handleValidationErrors
+];
+
 module.exports = {
   validateRegistration,
   validateLogin,
@@ -547,6 +651,11 @@ module.exports = {
   validateDateRange,
   validateGymCheckIn,
   validateFileUpload,
+  validateGymReview,
+  validateCheckIn,
+  validateWorkout,
+  validateExerciseSet,
+  validateWorkoutCompletion,
   createCustomValidation,
   handleValidationErrors
 };

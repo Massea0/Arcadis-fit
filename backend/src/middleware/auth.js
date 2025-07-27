@@ -217,10 +217,71 @@ const optionalAuth = async (req, res, next) => {
   }
 };
 
+/**
+ * Middleware pour vérifier l'abonnement actif
+ */
+const requireActiveMembership = async (req, res, next) => {
+  try {
+    const userId = req.user?.id;
+
+    if (!userId) {
+      return res.status(401).json({
+        success: false,
+        error: 'Authentification requise'
+      });
+    }
+
+    // Vérifier l'abonnement actif
+    const { data: membership, error } = await supabaseAdmin
+      .from('memberships')
+      .select('*')
+      .eq('user_id', userId)
+      .eq('status', 'active')
+      .gte('expires_at', new Date().toISOString())
+      .single();
+
+    if (error || !membership) {
+      return res.status(403).json({
+        success: false,
+        error: 'Abonnement actif requis pour accéder à cette fonctionnalité',
+        code: 'MEMBERSHIP_REQUIRED'
+      });
+    }
+
+    req.membership = membership;
+    next();
+  } catch (error) {
+    console.error('Error checking membership:', error);
+    return res.status(500).json({
+      success: false,
+      error: 'Erreur lors de la vérification de l\'abonnement'
+    });
+  }
+};
+
+// Alias pour compatibilité avec les noms utilisés dans les routes
+const authenticateToken = authenticateUser;
+const requirePhoneVerification = (req, res, next) => {
+  if (!req.user?.phone_verified) {
+    return res.status(403).json({
+      success: false,
+      error: 'Vérification du téléphone requise',
+      code: 'PHONE_VERIFICATION_REQUIRED'
+    });
+  }
+  next();
+};
+
+const requireAdmin = authorizeRoles(['admin']);
+
 module.exports = {
   authenticateUser,
+  authenticateToken,
   authorizeRoles,
   requireActiveSubscription,
+  requireActiveMembership,
+  requirePhoneVerification,
+  requireAdmin,
   checkResourceOwnership,
   optionalAuth,
 };
