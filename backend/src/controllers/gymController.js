@@ -21,21 +21,10 @@ class GymController {
         .select(`
           id,
           name,
-          description,
           address,
           city,
-          region,
           phone,
           email,
-          website,
-          latitude,
-          longitude,
-          opening_hours,
-          amenities,
-          images,
-          rating,
-          price_range,
-          membership_plans(id, name, price_xof, duration_days),
           created_at
         `)
         .eq('is_active', true);

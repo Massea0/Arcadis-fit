@@ -29,16 +29,16 @@ class WorkoutController {
           muscle_groups,
           equipment_needed,
           image_url,
-          exercises:workout_template_exercises(
-            id,
-            exercise_id,
-            sets,
-            reps,
-            duration_seconds,
-            rest_seconds,
-            order_index,
-            exercises(id, name, muscle_group, equipment, instructions, gif_url)
-          )
+                      exercises:workout_template_exercises(
+              id,
+              exercise_id,
+              sets,
+              reps,
+              duration_seconds,
+              rest_seconds,
+              order_index,
+              exercises(id, name, muscle_groups)
+            )
         `)
         .eq('is_active', true);
 
@@ -206,7 +206,7 @@ class WorkoutController {
             rest_seconds,
             order_index,
             notes,
-            exercises(id, name, muscle_group, equipment, instructions, gif_url)
+                         exercises(id, name, muscle_groups, equipment, instructions, gif_url)
           )
         `)
         .single();
