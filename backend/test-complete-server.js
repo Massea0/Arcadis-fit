@@ -34,7 +34,9 @@ try {
         users: '✅ OK', 
         payments: '✅ OK',
         gyms: '✅ OK',
-        workouts: '✅ OK'
+        workouts: '✅ OK',
+        nutrition: '✅ OK',
+        notifications: '✅ OK'
       },
       timestamp: new Date().toISOString()
     });
@@ -112,6 +114,23 @@ try {
   app.get('/api/gyms', gymController.getAllGyms);
   app.get('/api/workouts/templates', workoutController.getWorkoutTemplates);
   app.get('/api/payments/plans', paymentController.getMembershipPlans);
+  
+  // Nouveaux health checks
+  app.get('/api/nutrition/health', (req, res) => {
+    res.json({
+      success: true,
+      message: 'Service nutrition opérationnel',
+      features: ['Journal alimentaire', 'Analyse IA', 'Recommandations']
+    });
+  });
+  
+  app.get('/api/notifications/health', (req, res) => {
+    res.json({
+      success: true,
+      message: 'Service notifications opérationnel',
+      features: ['Push notifications', 'Email', 'SMS', 'Préférences']
+    });
+  });
 
   // Démarrer le serveur
   app.listen(PORT, () => {
@@ -126,6 +145,8 @@ try {
     console.log(`   - http://localhost:${PORT}/test/supabase`);
     console.log(`   - http://localhost:${PORT}/api/gyms`);
     console.log(`   - http://localhost:${PORT}/api/workouts/templates`);
+    console.log(`   - http://localhost:${PORT}/api/nutrition/health`);
+    console.log(`   - http://localhost:${PORT}/api/notifications/health`);
     console.log(`\n💡 Testez avec: curl http://localhost:${PORT}/health`);
   });
 
