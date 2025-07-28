@@ -6,7 +6,8 @@ import {
   Dimensions,
   TouchableOpacity,
   Animated,
-  ImageBackground
+  ImageBackground,
+  Alert
 } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 import { Ionicons } from '@expo/vector-icons';
@@ -48,6 +49,48 @@ export default function WelcomeScreen({ navigation }) {
       })
     ]).start();
   }, []);
+
+  const handleLoginPress = () => {
+    console.log('🔐 BOUTON LOGIN PRESSÉ !');
+    Alert.alert(
+      'Test Navigation',
+      'Le bouton "J\'ai déjà un compte" a été pressé !',
+      [
+        {
+          text: 'Aller à Login',
+          onPress: () => {
+            console.log('Navigation vers Login...');
+            navigation.navigate('Login');
+          }
+        },
+        {
+          text: 'Annuler',
+          style: 'cancel'
+        }
+      ]
+    );
+  };
+
+  const handleRegisterPress = () => {
+    console.log('🚀 BOUTON REGISTER PRESSÉ !');
+    Alert.alert(
+      'Test Navigation',
+      'Le bouton "Commencer la révolution" a été pressé !',
+      [
+        {
+          text: 'Aller à Register',
+          onPress: () => {
+            console.log('Navigation vers Register...');
+            navigation.navigate('Register');
+          }
+        },
+        {
+          text: 'Annuler',
+          style: 'cancel'
+        }
+      ]
+    );
+  };
 
   return (
     <View style={styles.container}>
@@ -118,7 +161,7 @@ export default function WelcomeScreen({ navigation }) {
           <View style={styles.buttonContainer}>
             <TouchableOpacity
               style={styles.primaryButton}
-              onPress={() => navigation.navigate('Register')}
+              onPress={handleRegisterPress}
               activeOpacity={0.8}
             >
               <LinearGradient
@@ -134,11 +177,21 @@ export default function WelcomeScreen({ navigation }) {
 
             <TouchableOpacity
               style={styles.secondaryButton}
-              onPress={() => navigation.navigate('Login')}
+              onPress={handleLoginPress}
               activeOpacity={0.8}
             >
               <Text style={styles.secondaryButtonText}>
                 🔐 J'ai déjà un compte
+              </Text>
+            </TouchableOpacity>
+
+            <TouchableOpacity
+              style={[styles.secondaryButton, { backgroundColor: 'rgba(255,255,255,0.2)', marginTop: 10 }]}
+              onPress={() => navigation.navigate('TestButtons')}
+              activeOpacity={0.8}
+            >
+              <Text style={[styles.secondaryButtonText, { fontSize: 14 }]}>
+                🧪 Test Boutons (Debug)
               </Text>
             </TouchableOpacity>
           </View>

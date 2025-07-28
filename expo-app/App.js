@@ -20,6 +20,7 @@ import ProfileScreen from './src/screens/ProfileScreen';
 import PaymentScreen from './src/screens/PaymentScreen';
 import TestScreen from './src/screens/TestScreen';
 import SimpleTestScreen from './src/screens/SimpleTestScreen';
+import TestButtonsScreen from './TestButtonsScreen';
 
 // Context imports
 import { AuthProvider, useAuth } from './src/context/AuthContext';
@@ -145,6 +146,13 @@ function AuthStack() {
         component={WelcomeScreen}
         options={{ 
           headerShown: false 
+        }}
+      />
+      <Stack.Screen 
+        name="TestButtons" 
+        component={TestButtonsScreen}
+        options={{ 
+          title: '🧪 Test Boutons' 
         }}
       />
       <Stack.Screen 
