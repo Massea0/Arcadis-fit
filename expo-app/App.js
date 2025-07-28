@@ -17,9 +17,9 @@ import WorkoutScreen from './src/screens/WorkoutScreen';
 import NutritionScreen from './src/screens/NutritionScreen';
 import GymScreen from './src/screens/GymScreen';
 import ProfileScreen from './src/screens/ProfileScreen';
-import AIBrainScreen from './src/screens/AIBrainScreen';
-import MetaverseScreen from './src/screens/MetaverseScreen';
 import PaymentScreen from './src/screens/PaymentScreen';
+import TestScreen from './src/screens/TestScreen';
+import SimpleTestScreen from './src/screens/SimpleTestScreen';
 
 // Context imports
 import { AuthProvider } from './src/context/AuthContext';
@@ -59,10 +59,6 @@ function MainTabs() {
             iconName = focused ? 'restaurant' : 'restaurant-outline';
           } else if (route.name === 'Gym') {
             iconName = focused ? 'business' : 'business-outline';
-          } else if (route.name === 'AIBrain') {
-            iconName = focused ? 'brain' : 'brain-outline';
-          } else if (route.name === 'Metaverse') {
-            iconName = focused ? 'planet' : 'planet-outline';
           } else if (route.name === 'Profile') {
             iconName = focused ? 'person' : 'person-outline';
           }
@@ -117,22 +113,6 @@ function MainTabs() {
         options={{
           title: '🏢 Gym',
           headerTitle: '🏋️ Salles de Sport'
-        }}
-      />
-      <Tab.Screen 
-        name="AIBrain" 
-        component={AIBrainScreen}
-        options={{
-          title: '🧠 IA',
-          headerTitle: '🔮 Arcadis Brain'
-        }}
-      />
-      <Tab.Screen 
-        name="Metaverse" 
-        component={MetaverseScreen}
-        options={{
-          title: '🎮 VR',
-          headerTitle: '🌍 Metaverse Fitness'
         }}
       />
       <Tab.Screen 
@@ -207,18 +187,15 @@ export default function App() {
   useEffect(() => {
     async function prepare() {
       try {
-        // Pre-load fonts, make any API calls you need to do here
-        await Font.loadAsync({
-          'Roboto': require('./assets/fonts/Roboto-Regular.ttf'),
-          'RobotoBold': require('./assets/fonts/Roboto-Bold.ttf'),
-        });
+        // Skip font loading to avoid errors
+        console.log('🚀 Initializing Arcadis Fit Revolution...');
         
-        // Artificially delay for demo
-        await new Promise(resolve => setTimeout(resolve, 2000));
+        // Short delay for demo
+        await new Promise(resolve => setTimeout(resolve, 1000));
         
-        console.log('🚀 Arcadis Fit Revolution - App Ready!');
+        console.log('✅ Arcadis Fit Revolution - App Ready!');
       } catch (e) {
-        console.warn(e);
+        console.warn('⚠️ App initialization error:', e);
       } finally {
         setAppIsReady(true);
       }

@@ -1,6 +1,5 @@
-import React, { useState } from 'react';
-import { View, Text, TextInput, TouchableOpacity, StyleSheet, Alert } from 'react-native';
-import { LinearGradient } from 'expo-linear-gradient';
+import React from 'react';
+import { View, Text, Button, StyleSheet, Alert } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 
 const COLORS = {
@@ -12,139 +11,103 @@ const COLORS = {
 };
 
 export default function LoginScreen({ navigation }) {
-  const [email, setEmail] = useState('demo@arcadisfit.com');
-  const [password, setPassword] = useState('demo123');
-
   const handleLogin = () => {
+    console.log('LOGIN BUTTON PRESSED!');
     Alert.alert(
-      '🎉 Connexion Réussie !',
-      'Bienvenue dans Arcadis Fit Revolution !',
-      [
-        {
-          text: 'Continuer',
-          onPress: () => {
-            // Ici on devrait naviguer vers l'app principale
-            // Pour la démo, on simule juste
-            navigation.navigate('Welcome');
-          }
-        }
-      ]
+      '🎉 SUCCÈS !',
+      'Le bouton fonctionne parfaitement ! Les clics sont réparés ! 🚀'
     );
   };
 
+  const handleBack = () => {
+    console.log('BACK BUTTON PRESSED!');
+    navigation.goBack();
+  };
+
   return (
-    <LinearGradient
-      colors={[COLORS.primary, COLORS.secondary]}
-      style={styles.container}
-    >
-      <View style={styles.content}>
-        <View style={styles.header}>
-          <Ionicons name="fitness" size={60} color={COLORS.white} />
-          <Text style={styles.title}>🔐 Connexion</Text>
-          <Text style={styles.subtitle}>Accédez à votre compte Arcadis Fit</Text>
-        </View>
-
-        <View style={styles.form}>
-          <View style={styles.inputContainer}>
-            <Ionicons name="mail" size={20} color={COLORS.primary} />
-            <TextInput
-              style={styles.input}
-              placeholder="Email"
-              value={email}
-              onChangeText={setEmail}
-              keyboardType="email-address"
-              autoCapitalize="none"
-            />
-          </View>
-
-          <View style={styles.inputContainer}>
-            <Ionicons name="lock-closed" size={20} color={COLORS.primary} />
-            <TextInput
-              style={styles.input}
-              placeholder="Mot de passe"
-              value={password}
-              onChangeText={setPassword}
-              secureTextEntry
-            />
-          </View>
-
-          <TouchableOpacity style={styles.loginButton} onPress={handleLogin}>
-            <Text style={styles.loginButtonText}>🚀 SE CONNECTER</Text>
-          </TouchableOpacity>
-
-          <TouchableOpacity onPress={() => navigation.navigate('Register')}>
-            <Text style={styles.linkText}>
-              Pas de compte ? 📝 S'inscrire
-            </Text>
-          </TouchableOpacity>
-        </View>
+    <View style={styles.container}>
+      <View style={styles.header}>
+        <Ionicons name="fitness" size={60} color={COLORS.primary} />
+        <Text style={styles.title}>🔐 Test de Connexion</Text>
+        <Text style={styles.subtitle}>Test avec Button natif</Text>
       </View>
-    </LinearGradient>
+
+      <View style={styles.buttonContainer}>
+        <Button
+          title="🧪 TESTER LE CLIC"
+          onPress={handleLogin}
+          color={COLORS.primary}
+        />
+
+        <View style={{height: 20}} />
+        
+        <Button
+          title="← Retour"
+          onPress={handleBack} 
+          color={COLORS.secondary}
+        />
+      </View>
+    </View>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-  },
-  content: {
-    flex: 1,
-    padding: 20,
+    backgroundColor: COLORS.white,
     justifyContent: 'center',
+    alignItems: 'center',
+    padding: 20,
   },
   header: {
     alignItems: 'center',
-    marginBottom: 40,
+    marginBottom: 50,
   },
   title: {
-    fontSize: 28,
+    fontSize: 24,
     fontWeight: 'bold',
-    color: COLORS.white,
+    color: COLORS.dark,
     marginTop: 20,
     marginBottom: 10,
   },
   subtitle: {
     fontSize: 16,
-    color: COLORS.white,
-    opacity: 0.9,
+    color: COLORS.dark,
+    opacity: 0.7,
     textAlign: 'center',
   },
-  form: {
-    backgroundColor: COLORS.white,
-    borderRadius: 20,
-    padding: 30,
-  },
-  inputContainer: {
-    flexDirection: 'row',
+  buttonContainer: {
+    width: '100%',
     alignItems: 'center',
-    borderBottomWidth: 2,
-    borderBottomColor: COLORS.light,
-    marginBottom: 20,
-    paddingBottom: 10,
   },
-  input: {
-    flex: 1,
-    marginLeft: 15,
-    fontSize: 16,
-    color: COLORS.dark,
-  },
-  loginButton: {
+  testButton: {
     backgroundColor: COLORS.primary,
-    borderRadius: 25,
     paddingVertical: 15,
-    alignItems: 'center',
-    marginTop: 20,
-    marginBottom: 15,
+    paddingHorizontal: 30,
+    borderRadius: 10,
+    marginBottom: 20,
+    minWidth: 250,
+    elevation: 3,
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.2,
+    shadowRadius: 2,
   },
-  loginButtonText: {
+  testButtonText: {
     color: COLORS.white,
     fontSize: 16,
     fontWeight: 'bold',
+    textAlign: 'center',
   },
-  linkText: {
-    color: COLORS.primary,
+  backButton: {
+    backgroundColor: COLORS.secondary,
+    paddingVertical: 10,
+    paddingHorizontal: 20,
+    borderRadius: 8,
+  },
+  backButtonText: {
+    color: COLORS.white,
     fontSize: 14,
     textAlign: 'center',
-    fontWeight: '600',
   },
 });
