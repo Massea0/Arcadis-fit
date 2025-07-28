@@ -22,7 +22,7 @@ import TestScreen from './src/screens/TestScreen';
 import SimpleTestScreen from './src/screens/SimpleTestScreen';
 
 // Context imports
-import { AuthProvider } from './src/context/AuthContext';
+import { AuthProvider, useAuth } from './src/context/AuthContext';
 import { ThemeProvider } from './src/context/ThemeContext';
 
 // Keep splash screen visible
@@ -180,9 +180,35 @@ function AuthStack() {
   );
 }
 
+// Composant de navigation principal qui utilise le contexte d'authentification
+function AppNavigation() {
+  const { isAuthenticated, isLoading } = useAuth();
+
+  if (isLoading) {
+    return null; // Ou un écran de chargement
+  }
+
+  return (
+    <NavigationContainer>
+      <StatusBar style="light" backgroundColor={COLORS.primary} />
+      
+      <Stack.Navigator 
+        screenOptions={{ 
+          headerShown: false 
+        }}
+      >
+        {!isAuthenticated ? (
+          <Stack.Screen name="Auth" component={AuthStack} />
+        ) : (
+          <Stack.Screen name="Main" component={MainTabs} />
+        )}
+      </Stack.Navigator>
+    </NavigationContainer>
+  );
+}
+
 export default function App() {
   const [appIsReady, setAppIsReady] = useState(false);
-  const [isAuthenticated, setIsAuthenticated] = useState(false);
 
   useEffect(() => {
     async function prepare() {
@@ -217,22 +243,7 @@ export default function App() {
   return (
     <ThemeProvider>
       <AuthProvider>
-        <NavigationContainer>
-          <StatusBar style="light" backgroundColor={COLORS.primary} />
-          
-          {/* Routes conditionnelles selon l'authentification */}
-          <Stack.Navigator 
-            screenOptions={{ 
-              headerShown: false 
-            }}
-          >
-            {!isAuthenticated ? (
-              <Stack.Screen name="Auth" component={AuthStack} />
-            ) : (
-              <Stack.Screen name="Main" component={MainTabs} />
-            )}
-          </Stack.Navigator>
-        </NavigationContainer>
+        <AppNavigation />
       </AuthProvider>
     </ThemeProvider>
   );
